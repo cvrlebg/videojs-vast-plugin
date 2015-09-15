@@ -184,10 +184,8 @@
             }
           )[0];
         }
-        var blocker = window.document.createElement("a");
+        var blocker = document.createElement("div");
         blocker.className = "vast-blocker";
-        blocker.href = clickthrough || "#";
-        blocker.target = "_blank";
         blocker.onclick = function() {
           if (player.paused()) {
             player.play();
@@ -197,7 +195,11 @@
           if (clicktrackers) {
             player.vastTracker.trackURLs([clicktrackers]);
           }
-          player.trigger("adclick");
+
+          if(player.currentTime() > 1) {
+            player.trigger("adclick");
+            window.open(clickthrough || "#", '_blank');
+          }
         };
         player.vast.blocker = blocker;
         player.el().insertBefore(blocker, player.controlBar.el());
@@ -255,11 +257,11 @@
         player.loadingSpinner.el().style.display = "none";
         var timeLeft = Math.ceil(settings.skip - player.currentTime());
         if(timeLeft > 0) {
-          player.vast.skipButton.innerHTML = "Skip in " + timeLeft + "...";
+          player.vast.skipButton.innerHTML = "تخطي الإعلان في " + timeLeft;
         } else {
           if((' ' + player.vast.skipButton.className + ' ').indexOf(' enabled ') === -1){
             player.vast.skipButton.className += " enabled";
-            player.vast.skipButton.innerHTML = "Skip";
+            player.vast.skipButton.innerHTML = "تخطي الإعلان";
           }
         }
       }
