@@ -1,14 +1,7 @@
 {
-  "name": "videojs-vast-plugin",
+  "name": "videojs-vast-plugin-diwanee",
   "version": "0.2.1",
-  "homepage": "https://github.com/theonion/videojs-vast-plugin",
-  "authors": [
-    "Shaker Islam <sislam@theonion.com>",
-    "Chris Sinchok <csinchok@theonion.com>",
-    "Sean Bloomfield <sbloomfield@theonion.com>",
-    "Andrew Kos <akos@theonion.com>",
-    "Vince Forgione <vforgione@theonion.com>"
-  ],
+  "homepage": "https://github.com/cvrlebg/videojs-vast-plugin",
   "description": "A VAST plugin for VideoJS",
   "main": "videojs.vast.js",
   "keywords": [
@@ -27,10 +20,5 @@
     "spec",
     "Gruntfile.js",
     "lib"
-  ],
-  "dependencies": {
-    "videojs": "4.4.3",
-    "vast-client-js": "http://github.com/theonion/vast-client-js.git#a0529f00c96f5961c08ab0011df19fd124828e87",
-    "videojs-contrib-ads": "0.5.0"
-  }
+  ]
 }
