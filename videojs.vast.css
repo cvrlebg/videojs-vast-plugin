@@ -1,8 +1,8 @@
 .vast-skip-button {
   display: block;
   position: absolute;
-  top: 5px;
   right: 0;
+  bottom: 20%;
   background-color: #000;
   color: #AAA;
   font-size: 12px;
