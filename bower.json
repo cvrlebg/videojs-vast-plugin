@@ -19,5 +19,9 @@
     "tests",
     "spec",
     "Gruntfile.js"
-  ]
+  ],
+  "dependencies": {
+    "vast-client-js": "1.3.4",
+    "videojs-contrib-ads": "3.0.0"
+  }
 }
