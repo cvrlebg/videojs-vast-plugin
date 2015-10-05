@@ -19,8 +19,5 @@
     "tests",
     "spec",
     "Gruntfile.js"
-  ],
-  "dependencies": {
-    "videojs-contrib-ads": "0.5.0"
-  }
+  ]
 }
