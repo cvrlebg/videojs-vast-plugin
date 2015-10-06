@@ -223,6 +223,7 @@
             if((' ' + player.vast.skipButton.className + ' ').indexOf(' enabled ') >= 0) {
               player.vastTracker.skip();
               player.vast.tearDown();
+              player.trigger('vast-preroll-removed');
             }
             if(window.Event.prototype.stopPropagation !== undefined) {
               e.stopPropagation();
@@ -233,9 +234,9 @@
 
           player.vast.setupEvents();
 
-          player.trigger('vast-preroll-ready');
-
           player.one('ended', player.vast.tearDown);
+
+          player.trigger('vast-preroll-ready');
         },
 
         tearDown: function() {
@@ -254,8 +255,6 @@
           if (player.vast.showControls) {
             player.controls(true);
           }
-
-          player.trigger('vast-preroll-removed');
         },
 
         timeupdate: function(e) {
