@@ -116,6 +116,8 @@
                   vast.util.track(ad.errorURLTemplates, {ERRORCODE: 403});
                 }
               }
+            } else {
+              player.trigger('contentplay');
             }
 
             if (!player.vastTracker) {
