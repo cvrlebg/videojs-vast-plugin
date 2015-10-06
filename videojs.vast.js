@@ -233,9 +233,9 @@
 
           player.vast.setupEvents();
 
-          player.one('ended', player.vast.tearDown);
-
           player.trigger('vast-preroll-ready');
+
+          player.one('ended', player.vast.tearDown);
         },
 
         tearDown: function() {
