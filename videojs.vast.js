@@ -221,6 +221,7 @@
 
           skipButton.onclick = function(e) {
             if((' ' + player.vast.skipButton.className + ' ').indexOf(' enabled ') >= 0) {
+              player.trigger('adskipped');
               player.vastTracker.skip();
               player.vast.tearDown();
             }
