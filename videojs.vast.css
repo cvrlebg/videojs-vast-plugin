@@ -36,4 +36,5 @@
   z-index: 1;
   cursor: pointer;
   overflow: hidden;
+  background: url('/bower_components/diwanee-vjs-vast/img/px.png') top left;
 }
