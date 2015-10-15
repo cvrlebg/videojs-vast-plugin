@@ -217,7 +217,12 @@
           player.vast.skipButton = skipButton;
           player.el().appendChild(skipButton);
 
-          player.on("timeupdate", player.vast.timeupdate);
+          // fix for ie9 - detect only twice timeupdate event
+          if((/MSIE 9.0/).test(navigator.userAgent)) {
+            window.dTimeupdate = setInterval(player.vast.timeupdate, 250);
+          } else {
+            player.on("timeupdate", player.vast.timeupdate);
+          }
 
           skipButton.onclick = function(e) {
             if((' ' + player.vast.skipButton.className + ' ').indexOf(' enabled ') >= 0) {
@@ -268,6 +273,10 @@
             if((' ' + player.vast.skipButton.className + ' ').indexOf(' enabled ') === -1){
               player.vast.skipButton.className += " enabled";
               player.vast.skipButton.innerHTML = settings.skipTxt;
+
+              if((/MSIE 9.0/).test(navigator.userAgent)) {
+                clearInterval(window.dTimeupdate);
+              }
             }
           }
         }
