@@ -311,7 +311,9 @@
 
       player.on('vast-preroll-removed', function () {
         // preroll done or removed, start playing the actual video
-        player.play();
+        player.on('loadeddata', function() {
+          player.play();
+        });
       });
 
       player.on('contentupdate', function(){
