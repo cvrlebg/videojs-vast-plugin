@@ -311,9 +311,13 @@
 
       player.on('vast-preroll-removed', function () {
         // preroll done or removed, start playing the actual video
-        player.on('loadeddata', function() {
+        if((/MSIE 9.0/).test(navigator.userAgent)) { // fix for starting video after preroll
+          player.on('loadeddata', function() {
+            player.play();
+          });
+        } else {
           player.play();
-        });
+        }
       });
 
       player.on('contentupdate', function(){
